@@ -38,8 +38,8 @@ class NewTaskView: UIView {
         let view = viewFromNibForClass()
         view.frame = bounds
         view.autoresizingMask = [
-            UIViewAutoresizing.flexibleWidth,
-            UIViewAutoresizing.flexibleHeight
+            UIView.AutoresizingMask.flexibleWidth,
+            UIView.AutoresizingMask.flexibleHeight
         ]
         addSubview(view)
     }
@@ -56,7 +56,7 @@ class NewTaskView: UIView {
     
     @IBAction func doneClicked(_ sender: UIButton) {
         
-        if self.txtTaskName.text?.characters.count == 0{
+        if self.txtTaskName.text?.count == 0{
             self.lblError.isHidden = false
             return
         }
