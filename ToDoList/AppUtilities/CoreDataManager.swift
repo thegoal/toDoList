@@ -18,10 +18,12 @@ class CoreDataManager {
     
     //MARK: Shared Instance
     
-    static let sharedInstance : CoreDataManager = {
-        let instance = CoreDataManager()
-        return instance
-    }()
+    static let sharedInstance = CoreDataManager()
+
+//    static let sharedInstance : CoreDataManager = {
+//        let instance = CoreDataManager()
+//        return instance
+//    }()
     
     
     //MARK: Init

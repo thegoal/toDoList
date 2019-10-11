@@ -84,13 +84,13 @@ class DoneViewController: UIViewController,UITableViewDataSource,UITableViewDele
         task.taskDone = false
         CoreDataManager.sharedInstance.saveTask()
         doneTaskArray.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         if self.doneTaskArray.count == 0 {
             self.showNoDoneTaskLabel()
         }
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let task = doneTaskArray[indexPath.row]
             context.delete(task)

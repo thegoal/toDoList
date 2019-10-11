@@ -103,13 +103,13 @@ class PendingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         task.taskDone = true
         CoreDataManager.sharedInstance.saveTask()
         pendingTaskArray.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         if self.pendingTaskArray.count == 0 {
             self.showNoPendingTaskLabel()
         }
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let task = pendingTaskArray[indexPath.row]
             context.delete(task)

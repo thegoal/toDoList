@@ -14,9 +14,9 @@ class AppSupport {
     class func addAnimation( toView: UIView! , withDuration: Float) {
         let transition = CATransition()
         transition.duration = CFTimeInterval(withDuration)
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromRight
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
         toView.layer.add(transition, forKey: nil)
     }
 }
